@@ -17,6 +17,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  border: 2px solid black;
+
+}
+
 a {
   font-weight: 500;
   color: #646cff;

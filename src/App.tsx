@@ -7,6 +7,7 @@ import { specificNote } from './types'
 function App() {
 
   const notes: specificNote[] = ["S", "r", "R", "g", "G", "m", "M", "P", "D", "N", "S", "r", "R", "g", "G", "m"];
+  const taal: number[] = [4,8,12,16];
 
   return (
     <>
@@ -17,7 +18,7 @@ function App() {
       </div>
       <h1>RagaScript</h1>
       
-      <Notes notes={notes} />
+      <Notes notes={notes} taal={taal}/>
 
       <p class="subtitle">
         popipopipo

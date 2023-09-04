@@ -1,7 +1,9 @@
 import { specificNote } from "../types";
+import { Matras } from "./Matras";
 
 interface NotesProps {
     notes: specificNote[];
+    taal: number[];
 }
 
 export function Notes(props: NotesProps) {
@@ -15,11 +17,17 @@ export function Notes(props: NotesProps) {
     }
 
     return (
-        <div class="notes">
-            {segmentedNotes.map((note) => {
-                if (note!="|") return <div class="note matra">{note}</div>
-                else return <div class="vibhaag" />
-            })}
-        </div>
+        <table>
+            <tbody>
+                <Matras taal={props.taal} />
+                
+                {segmentedNotes.map((note) => {
+                    if (note!="|") return <span class="note">{note.padEnd(3)}</span>
+                    else return <span class="vibhaag" />
+                })}
+
+                {/* <Matras taal={props.taal} /> */}
+            </tbody>
+        </table>
     )
 }

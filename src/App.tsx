@@ -1,29 +1,26 @@
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
+import ragaScriptLogo from '/logo.png'
 import './App.css'
+import './components/components.css'
 import { Notes } from './components/Notes'
 import { specificNote } from './types'
 
 function App() {
 
-  const notes: specificNote[] = ["S", "R", "g", "M", "P", "D", "n"];
+  const notes: specificNote[] = ["S", "r", "R", "g", "G", "m", "M", "P", "D", "N", "S", "r", "R", "g", "G", "m"];
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
         <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
+          <img src={ragaScriptLogo} class="logo" alt="RagaScript logo" />
         </a>
       </div>
       <h1>RagaScript</h1>
       
       <Notes notes={notes} />
 
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
+      <p class="subtitle">
+        popipopipo
       </p>
     </>
   )

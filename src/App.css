@@ -12,13 +12,12 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #e42424aa);
+  filter: drop-shadow(0 0 2em #b3a8ce77);
 }
 
-.card {
-  padding: 2em;
-}
-
-.subtitle {
-  color: #888;
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }

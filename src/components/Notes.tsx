@@ -8,25 +8,25 @@ interface NotesProps {
 
 export function Notes(props: NotesProps) {
 
-    const segmentedNotes: (specificNote | "|")[] = [];
-    for (let i = 0; i < props.notes.length; i++) {
-        segmentedNotes.push(props.notes[i]);
-        if ((i+1)%4===0 && i!==props.notes.length - 1) {
-            segmentedNotes.push("|");
-        }
-    }
+    const matras: number = props.taal.slice(-1)[0];
+
+    props.notes.push(...Array.from({length: matras - props.notes.length % matras}, () => "" as specificNote))
 
     return (
         <table>
             <tbody>
                 <Matras taal={props.taal} />
-                
-                {segmentedNotes.map((note) => {
-                    if (note!="|") return <span class="note">{note.padEnd(3)}</span>
-                    else return <span class="vibhaag" />
+                <tr class="row-separator" />
+
+                {props.notes.map((note, index) => {
+                    return <>
+                    {(props.taal.includes(index % matras)) && <span class="vibhaag" />}
+                    <span class={note?"note":"rest"}>{note.toString().padEnd(3)}</span>
+                    {((index % matras) === matras - 1) && <tr class="row-separator" />}
+                    </>
                 })}
 
-                {/* <Matras taal={props.taal} /> */}
+                <Matras taal={props.taal} />
             </tbody>
         </table>
     )

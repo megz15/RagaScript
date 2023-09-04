@@ -4,7 +4,8 @@
     margin-inline: 10px;
 }
 
-.note {
+.note,
+.rest {
     background-color: #000000;
     color: white;
     white-space: pre;
@@ -17,8 +18,28 @@
     margin: 1px;
 }
 
+.rest {
+    background-color: rgb(20, 20, 20);
+}
+
 .matra {
     font-weight: bolder;
     background-color: aliceblue;
     color: black;
+}
+
+.row-separator {
+    height: 10px;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    border: 2px solid black;
+    padding: 1em;
+    text-align: center;
+}
+.control-panel > div > * {
+    margin: 0.5em;
 }
